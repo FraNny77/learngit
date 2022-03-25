@@ -1,0 +1,49 @@
+一：Git 工作流程
+1.git仓库(版本区)
+存放提交记录
+2.暂存区
+临时存放杯修改的文件
+3.工作区
+被git管理的目录
+
+二：Git使用前配置
+1. 配置提交人姓名：
+git config --global user.name “提交人姓名” # 对当前系统用户有效
+
+2. 配置提交人姓名：
+git config --global user.email  “提交人邮箱” # 对当前系统用户有效
+（作用：识别开发人员，与登陆github的账户无关）
+
+3. 查看git配置信息：git config --list
+
+ps:
+1. 如果要对配置信息进行修改，重复上述命令即可。
+2. 配置只需要执行一次。
+
+三：常用提交步骤
+tips:
+mkdir name :在当前目录下新建一个名字为name的文件夹
+pwd : 当前目录
+ls -ah:展示当前目录下所有文件
+
+1.初始化git仓库
+git init # 把当前目录变成Git可以管理的仓库
+
+2.查看仓库状态：
+git status
+
+3.追踪文件
+git add name
+
+4 向仓库中提交代码(提交当前目录下的全部文件)
+git commit -m “提交信息” # 提交所有 add
+vs： git commit -m "提交信息" 文件 # 提交某个文件
+ps：提交只会提交add完成后的文件
+
+8.查看未使用add命令时的修改
+git diff #
+这样可以查看到所有文件的更改内容，
+如果你只想查看MainActivity.java这个文件的更改内容
+可以使用如下命令：
+git diff MainActivity.java
+vs：git log 表示最近的改变，git reflog可以看到所有的改变 如果文件未被跟踪,即没有使用git add这个命令时,文件为红色,如果使用这个命令,则文件变为绿色.

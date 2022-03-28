@@ -13,6 +13,17 @@ def mins(a, b):
     return a*b//gcb(a, b)
 
 
+# n的所有约数
+def get_divisor(n):
+    res = []
+    for i in range(1,n+1):
+        if i*i>n:break
+        if n%i==0:
+            res.append(i)
+            if n%i != n//i:
+                res.append(n//i)
+        return sorted(res)
+
 # n的质因数分解
 
 

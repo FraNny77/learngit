@@ -57,6 +57,7 @@ def SPFA(s):
     st = [0 for i in range(n+10)]
     st[s] = 1
     dist = [float('inf') for i in range(n+10)]
+    dist[s] = 0
     while que:
         t = que.pop(0)
         st[t] = 0
